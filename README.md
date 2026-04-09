@@ -29,29 +29,61 @@ dairy-kiosk-app/
 
 The application creates an output directory in the user home folder and stores farmer photos plus log files there during runtime. [file:4]
 
-## Installation
+## Step-by-Step Installation
 
-Install Python dependencies:
+### 1. Clone the repository
+```bash
+git clone https://github.com/iamaryanbhalsing/dairy-kiosk-app.git
+cd dairy-kiosk-app
+```
 
+### 2. Check Python version
+Make sure Python 3 is installed:
+
+```bash
+python3 --version
+```
+
+### 3. Create a virtual environment (recommended)
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+On Windows:
+```bash
+venv\Scripts\activate
+```
+
+### 4. Install dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-If Tkinter is missing on Ubuntu or Debian, install it with:
-
+### 5. Install Tkinter if needed
+On Ubuntu/Debian:
 ```bash
+sudo apt update
 sudo apt install python3-tk
 ```
 
-These setup steps are consistent with the existing project notes and dependencies. [file:3][file:2]
-
-## Run
-
-Start the application with:
-
+### 6. Run the application
 ```bash
 python3 dairy_kiosk_app.py
 ```
+
+### 7. Use the app
+- Enter farmer details
+- Enter milk quantity, FAT, and SNF
+- Select payment mode
+- Start camera and capture face if needed
+- Click **Process Transaction**
+
+### 8. Check generated files
+After running the app, these files are created in your home directory under `~/output/`:
+- `~/output/farmer_photos/`
+- `~/output/sms_log.txt`
+- `~/output/payment_log.txt`
 
 The current attached README uses an `output/` path, but the main script itself is the actual runnable entry point for the repository. [file:3][file:4]
 
@@ -96,6 +128,8 @@ At runtime, the app creates and uses these paths:
 - Add authentication and operator login.
 - Build analytics for daily milk collection and payout totals.
 
+
 ## License
 
 This project is shared for educational and demonstration purposes.
+

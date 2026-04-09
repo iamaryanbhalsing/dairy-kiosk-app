@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+output/
+farmer_photos/
+sms_log.txt
+payment_log.txt
